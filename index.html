@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Rohit Raj</title>
+		<!-- link to bootstrap -->
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!-- Optional JavaScript -->
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+			<style>
+				.carousel-control-prev-icon {
+					height: 100px;
+					width: 100px;
+					outline: black;
+					background-size: 50%, 50%;
+					border-radius: 50%;
+					border: 8px dashed #20B2AA;
+					background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2320B2AA' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+				}
+				.carousel-control-next-icon {
+					height: 100px;
+					width: 100px;
+					outline: black;
+					background-size: 50%, 50%;
+					border-radius: 50%;
+					border: 8px dashed #20B2AA;
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2320B2AA' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+				}
+
+				.carousel-control-next-icon:after
+				{
+					font-size: 55px;
+					color: #20B2AA;
+				}
+
+				.carousel-control-prev-icon:after
+				{
+					font-size: 55px;
+					color: #20B2AA;
+				}
+
+				.carousel-inner {
+					background-color: white !important;
+				}
+
+				.carousel-indicators li {
+				    border-radius: 12px;
+				    width: 12px;
+				    height: 12px;
+				    background-color: #404040;
+				}
+
+				.carousel-indicators .active{
+    			background-color: blue;
+				}
+
+				ul.timeline {
+					list-style-type: none;
+					position: relative;
+				}
+				ul.timeline:before {
+					content: ' ';
+					background: #B2CAB3;
+					display: inline-block;
+					position: absolute;
+					left: 29px;
+					width: 2px;
+					height: 110%;
+					z-index: 400;
+				}
+				ul.timeline > li {
+					margin: 20px 0;
+					padding-left: 20px;
+				}
+				ul.timeline > li:before {
+					content: ' ';
+					background: white;
+					display: inline-block;
+					position: absolute;
+					border-radius: 50%;
+					border: 3px solid #228B22;
+					left: 20px;
+					width: 20px;
+					height: 20px;
+					z-index: 400;
+				}
+
+				ul.timeline > li img {
+					position: absolute;
+					left: -180px; /* Adjust as needed */
+					width: auto; /* Width will adjust automatically to maintain aspect ratio */
+					height: 50px; /* Fixed height */
+				}
+
+				.item-logo {
+					width: 50px;
+					height: 50px;
+					float: left;
+					margin-right: 10px;
+				}
+		</style>
+	</head>
+	<body>
+
+		<header class="bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+
+      <!-- Image -->
+      <img  class="rounded-circle" src="res/rohit.jpg" alt="Rohit Raj" style="width:35%;padding:5%;min-width:150px;min-height:150px;">
+
+      <!-- Heading -->
+      <h1 class="heading textmb-0">Rohit Raj</h1>
+
+      <!-- Subheading -->
+      <p class="subheading font-weight-light mb-0" style="padding:1%;">SciML Researcher <br> Masters in Mathematics from TU Wien <br> Machine Learning with Quantum Optimization</p>
+
+    </div>
+  </header>
+<br>
+
+
+
+		<div class="container-fluid bg-1 text-center">
+    		<div class="blurb">
+				<!-- <center><p>I'm a doctoral student in mathematics who is interested in scientific computing, numerical analysis, data science, machine learning and AI. </p></center> -->
+			</div><!-- /.blurb -->
+
+			<h1>Projects</h1>
+			<hr style="width:80%;">
+
+
+
+		<!-- Code snippet from: https://stackoverflow.com/questions/48824568/bootstrap-4-carousel-sliders-not-working/48826241 -->
+		<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+	    <ol class="carousel-indicators">
+	        <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+	        <li data-target="#carouselIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselIndicators" data-slide-to="2"></li>
+	        <li data-target="#carouselIndicators" data-slide-to="3"></li>
+	        <li data-target="#carouselIndicators" data-slide-to="4"></li>
+	    </ol>
+	    <div class="carousel-inner">
+					<div class="carousel-item active">
+					    <div class="card bg-light mb-3">
+						<img class="card-img-top" src="res/bezier-hingegan.svg" style=" object-fit: contain; height: 500px" alt="Bezier-Hinge GAN architecture">
+						<div class="card-body">
+							<h4 class="card-title" style="color:blue">Bezier-HingeGAN</h4>
+							<p class="card-text" style="color:blue">Bezier-HingeGAN for generation of Aerodynamic Shapes</p>
+						<a href="https://github.com/rraj-io/bezier-hingegan" class="btn btn-primary">Go to project</a>
+							<br><br><br>
+						</div>
+					  </div>
+					</div>
+          <div class="carousel-item">
+					    <div class="card bg-light mb-3">
+						<img class="card-img-top" src="res/beziergan.svg" style=" object-fit: contain; height: 500px" alt="Bezier-GAN architecture">
+						<div class="card-body">
+							<h4 class="card-title" style="color:blue">Bezier-GAN developed by Wei Chen, re-written in PyTorch</h4>
+							<p class="card-text" style="color:blue">Bezier-GAN for generation of Aerodynamic Shapes re-written in PyTorch library</p>
+						<a href="https://github.com/rraj-io/PyTorch-Bezier-GAN" class="btn btn-primary">Go to project</a>
+							<br><br><br>
+						</div>
+					  </div>
+					</div>
+					<div class="carousel-item">
+					    <div class="card bg-light mb-3">
+						<img class="card-img-top" src="res/flow-field-clustering.png" style=" height: 500px" alt="Flowfield clustering Slide">
+						<div class="card-body">
+							<h4 class="card-title" style="color:blue">Flowfield clustering</h4>
+							<p class="card-text" style="color:blue">Flow-field clsutering for acceleration of Turbine Design optimization</p>
+						<a href="https://github.com/ihs-ustutt/ai_design_assistant" class="btn btn-primary">Go to project</a>
+							<br><br><br>
+						</div>
+					  </div>
+					</div>
+					<div class="carousel-item">
+					      <div class="card bg-light mb-3">
+						      <img class="card-img-top" src="res/axialTurbine-optimization.svg" style=" height: 500px" alt="Tistos Turbine Optimization Slide">
+						      <div class="card-body">
+							      <h4 class="card-title" style="color:blue">Axial Turbine Optimization using dtOO</h4>
+							      <p class="card-text" style="color:blue">Axial Turbine Optimization based on dtOO using python and OpenFOAM</p>
+						      <a href="https://github.com/rraj-io/axialTurbine_optimization" class="btn btn-primary">Go to project</a>
+							      <br><br><br>
+						      </div>
+						</div>
+					</div>
+	        <div class="carousel-item">
+					<div class="card bg-light mb-3">
+						<img class="card-img-top" src="res/pinn-cavity.svg" style=" object-fit: contain; height: 500px; " alt="PINN Cavity Slide">
+						<div class="card-body">
+							<h4 class="card-title" style="color:blue">PINN Cavity Case</h4>
+							<p class="card-text" style="color:blue">Physics-Informed Neural Network case applied to Cavity problem</p>
+							<a href="https://julianroth.org/wirvsvirus/" class="btn btn-primary">Go to project</a>
+							<br><br><br>
+						</div>
+					</div>
+	        </div>
+
+	    </div>
+			<a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+	        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	        <span class="sr-only">Previous</span>
+	    </a>
+	    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+	        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	        <span class="sr-only">Next</span>
+	    </a>
+	</div>
+
+	<br>
+
+	<h1><center>Publications</center></h1>
+	<hr style="width:80%;">
+	<h2><center>Theses</center></h2>
+	<hr style="width:40%;">
+	<ul class="list-group" style="width:40%;margin: auto;">
+		<!--- svgli class="list-group-item" style="background-color: #e5f9ff">
+			Julian Roth. 2024. <b>Space-time goal-oriented error control and adaptivity for discretizations and reduced order modeling of multiphysics problems</b>. <br> <i>Dissertation, Leibniz University Hannover, Germany, June 2024.</i>	 &nbsp;
+			<a href="https://doi.org/10.15488/17573" download="">
+				Link
+			</a>
+		</li --->
+		<li class="list-group-item" style="background-color: #e5f9ff">
+			Rohit Raj. 2022. <b>Multiphase CFD Modelling and Simulation of Evaporation from porous Media</b>. <br> <i>Master's thesis, TU Wien, Austria, November 2022.</i>	 &nbsp;
+			<a href="res/master-thesis-rohit-raj.pdf" download="">
+				PDF
+				<i class="fa fa-file-pdf-o" aria-hidden="false"></i>
+			</a>
+		</li>
+		<li class="list-group-item" style="background-color: #e5f9ff">
+			Rohit Raj. 2017. <b>Performance Analysis of VC Refrigeration System with Vortex Tube as expansion Device</b>. <br> <i>Bachelor's thesis, Dr. APJ Abdul Kalam technical University, India, June 2017.</i> &nbsp;
+			<!--- a href="res/bachelorarbeit.pdf" download="">
+				PDF
+				<i class="fa fa-file-pdf-o" aria-hidden="false"></i>
+			</a --->
+		</li>
+	</ul>
+	<br>
+	<h2><center>Papers</center></h2>
+	<hr style="width:40%;">
+	<ul class="list-group" style="width:40%;margin: auto">
+		<li class="list-group-item" style="background-color: #f2ffe5">
+			Simon Eyselein, Alexander Tismer, Rohit Raj, Tobias Rentschler, Stefan Riedelbauch. 2025. <b>AI-Based Clustering of Numerical Flow Fields for Accelerating the Optimization of an Axial Turbine.</b> Energies  <a href="https://www.mdpi.com/1996-1073/18/3/677"> https://doi.org/10.3390/en18030677 </a>. Code: <a href="https://github.com/ihs-ustutt/ai_design_assistant"> https://github.com/ihs-ustutt/ai_design_assistant </a>
+		</li>
+		<li class="list-group-item" style="background-color: #f2ffe5">
+			Rohit Raj, Alexander Tismer, Lukas Gaisser, Stefan Riedelbauch. 2024. <b>A deep learning approach to calculate elementary effects of morris sensitivity analysis.</b> PAMM 24, no. 4 <a href=" https://doi.org/10.1002/pamm.202400104">  https://doi.org/10.1002/pamm.202400104 </a>. <!-- Code: <a href="https://github.com/codebro634/modulus"> https://github.com/codebro634/modulus </a -->
+		</li>
+		<li class="list-group-item" style="background-color: #f2ffe5">
+			Tobias Rentschler, Manuel Bastian Berkemeier, Stefan Fraas, Alexander Tismer, Rohit Raj, Sebastian Peitz, Stefan Riedelbauch. 2024. <b>Multi‐criteria hydraulic turbine optimization using a genetic algorithm and trust‐region postprocessing.</b> PAMM 24, no. 4. <a href=" https://doi.org/10.1002/pamm.202400126">  https://doi.org/10.1002/pamm.202400126 </a>. <!-- arXiv: <a href="https://arxiv.org/abs/2311.08907"> https://arxiv.org/abs/2311.08907 </a -->
+		</li>
+		<li class="list-group-item" style="background-color: #f2ffe5">
+			Henrik Ebel, Jan van Delden, Timo Lüddecke, Aditya Borse, Rutwik Gulakala, Marcus Stoffel, Manish Yadav, Merten Stender, Leon Schindler, Kristin Miriam de Payrebrune, Maximilian Raff, C David Remy, Benedict Röder, Rohit Raj, Tobias Rentschler, Alexander Tismer, Stefan Riedelbauch, Peter Eberhard. 2025. <b>Data publishing in mechanics and dynamics: challenges, guidelines, and examples from engineering design.</b> Data-Centric Engineering 6, e23 <a href="https://doi.org/10.1017/dce.2025.13"> https://doi.org/10.1017/dce.2025.13 </a>. <!--arXiv: <a href="https://arxiv.org/abs/2307.12455"> https://arxiv.org/abs/2307.12455 </a>. Code: <a href="https://github.com/mathmerizing/TemporalMultirateFEM"> https://github.com/mathmerizing/TemporalMultirateFEM </a -->
+		</li>
+		<!-- li class="list-group-item" style="background-color: #f2ffe5">
+			Hendrik Fischer, Julian Roth, Thomas Wick, Ludovic Chamoin, and Amelie Fau. 2024. <b> MORe DWR: Space-time goal-oriented error control for incremental POD-based ROM for time-averaged goal functionals.</b> <i>Journal of Computational Physics (JCP), Vol. 504, 2024, 112863</i>. Journal: <a href="https://doi.org/10.1016/j.jcp.2024.112863"> https://doi.org/10.1016/j.jcp.2024.112863 </a>. arXiv: <a href="https://arxiv.org/abs/2304.01140"> https://arxiv.org/abs/2304.01140 </a>
+		</li>
+		<li class="list-group-item" style="background-color: #f2ffe5">
+			Julian Roth, Jan Philipp Thiele, Uwe Köcher, and Thomas Wick. 2024. <b>Tensor-product space-time goal-oriented error control and adaptivity with partition-of-unity dual-weighted residuals for nonstationary flow problems.</b> <i>Computational Methods in Applied Mathematics (CMAM), vol. 24, no. 1, 2024, pp. 185-214.</i>. Journal: <a href="https://doi.org/10.1515/cmam-2022-0200"> https://doi.org/10.1515/cmam-2022-0200 </a>. arXiv: <a href="https://arxiv.org/abs/2210.02965"> https://arxiv.org/abs/2210.02965 </a>. Code: <a href="https://github.com/mathmerizing/dwr-instatfluid"> https://github.com/mathmerizing/dwr-instatfluid </a>
+		</li>
+		<li class="list-group-item" style="background-color: #f2ffe5">
+			Denis Khimin, Julian Roth, and Thomas Wick. 2022. <b>Space-time fluid-structure interaction: formulation and dG(0) time discretization.</b> In: <i>Proceedings of ECCOMAS 2022, Dec 2022.</i> URL: <a href="http://dx.doi.org/10.23967/eccomas.2022.257"> http://dx.doi.org/10.23967/eccomas.2022.257 </a>
+		</li>
+		<li class="list-group-item" style="background-color: #f2ffe5">
+			Julian Roth, Max Schröder, and Thomas Wick. 2022. <b>Neural network guided adjoint computations in dual weighted residual error estimation.</b> <i>SN Applied Sciences 4, 62 (2022).</i> DOI: <a href="https://doi.org/10.1007/s42452-022-04938-9"> https://doi.org/10.1007/s42452-022-04938-9 </a>
+		</li>
+		<li class="list-group-item" style="background-color: #f2ffe5">
+			Sebastian Kinnewig, Julian Roth, and Thomas Wick. 2021. <b>Geometric multigrid with multiplicative Schwarz smoothers for eddy-current and Maxwell’s equations in deal.II.</b> <i>Examples and Counterexamples (EXCO), Vol. 1, 2021, 100027.</i> DOI: <a href="https://doi.org/10.1016/j.exco.2021.100027"> https://doi.org/10.1016/j.exco.2021.100027 </a>
+		</li>
+  	<li class="list-group-item" style="background-color: #f2ffe5">
+			Michael Nolting, Julian Roth, and Ulf Wittke. 2020. <b>Towards Autonomous Digital Health Coaching for Scalable Chronic Disease Prevention.</b> In <i>Proceedings of the 14th EAI International Conference on Pervasive Computing Technologies for Healthcare</i> (<i>PervasiveHealth '20</i>). Association for Computing Machinery, New York, NY, USA, 259–262. DOI: <a href="https://doi.org/10.1145/3421937.3421966"> https://doi.org/10.1145/3421937.3421966 </a>
+		</li -->
+	</ul>
+	<br>
+	<h2><center>Lecture Notes</center></h2>
+	<hr style="width:40%;">
+	<ul class="list-group" style="width:40%;margin: auto">
+		<li class="list-group-item" style="background-color: #ffedcc">
+			Rohit Raj. 2024. <b>Sensitivity Analysis in the Age of AI: Integrating Morris Method with Machine Learning. </b> <i> Institute of Fluid Mechanics and Hydraulic Machinery, University of Stuttgart, 2024.</i> Link: <a href="https://rraj-io.github.io/technologiefelder_SA/#/"> https://rraj-io.github.io/technologiefelder_SA/#/ </a>
+		</li>
+	</ul>
+
+	<br>
+	<br>
+
+	<h1><center>CV</center></h1>
+	<hr style="width:80%;">
+
+	<div class="container mt-5 mb-5">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<!-- <h4>My Time Line</h4> -->
+				<ul class="timeline">
+					<!--li>
+						<a class="float-left" style="color:#228B22">PhD Researcher</a>
+						<a class="float-right" style="color:#228B22">now</a>
+						<br>
+						<p style="text-align:justify;">PhD Researcher At University of Stuttgart, Germany. Working on integrating AI with HPC to accelerate design optimization of Turbine blade.</p>
+					</li-->
+					<li>
+						<a href="https://www.ihs.uni-stuttgart.de/">
+							<img src="res/ihs-logo.png">
+						</a>
+						<!-- <img src="res/IRTG_Logo.png" style="position: absolute; left: -150px; top: 50px; width: auto; height: 40px;"> -->
+						<a class="float-left" style="color:#228B22">Research Assistant (Applied AI Engineer)</a>
+						<a class="float-right" style="color:#228B22">August 2024</a>
+						<br>
+						<p style="text-align:justify;">Doctoral Researcher at IHS in University of Stuttgart. <br> Working on <a href="https://www.itm.uni-stuttgart.de/en/spp_2353/projects_phase1/riedelbauch/">"Shape Optimizations Using AI Agents to Accelerate Numerical Flow Field Simulation and to Control the Island Model for Massive Parallelization"</a> under the supervision of Prof. Stefan Riedelbauch.</p>
+					</li>	
+					<li>
+						<a href="https://www.mathmods.eu/vienna">
+							<img src="res/tuwien-logo.png">
+						</a>
+						<a class="float-left" style="color:#228B22">M.Sc. MathMods</a>
+						<a class="float-right" style="color:#228B22">November 2022</a>
+						<br>
+						<p style="text-align:justify;">Received master's degree in mathematical modelling in engineering (with minor in applied cfd) from TU Wien, Austria and University of L'Aquila, Italy. Specialized in numerical analysis and scientific computing.</p>
+					</li>
+          <li>
+						<a href="https://www.mathmods.eu/about/partners/l-aquila">
+							<img src="res/univaq-logo.jpeg">
+						</a>
+						<a class="float-left" style="color:#228B22">Erasmus Exchange </a>
+						<a class="float-right" style="color:#228B22">Sept. 2020 - Feb. 2021</a>
+						<br>
+                <p style="text-align:justify;">MathMods 1st semester stay at University of L'Aquila before heading to higher semester to TU Wien as part of mobility program.</p>
+					</li>
+          <li>
+						<a href="https://www.linkedin.com/company/al-tajir-glass-industries-llc/">
+							<img src="res/altajir-logo.jpeg">
+						</a>
+						<a class="float-left" style="color:#228B22">Mechanical Engineer</a>
+						<a class="float-right" style="color:#228B22">Oct. 2018 - Aug. 2020</a>
+						<br>
+                <p style="text-align:justify;">Mechanical Engineer at Al Tajir Glass Industries Llc at Dubai.</p>
+					</li>
+           <li>
+						<a href="https://www.tak-technologies.com/">
+							<img src="res/tak-logo.jpeg">
+						</a>
+						<a class="float-left" style="color:#228B22">R&D Design Engineer</a>
+						<a class="float-right" style="color:#228B22">June 2017 - August 2018</a>
+						<br>
+                <p style="text-align:justify;">Mechanical Housing Design Engineer at TAK Technologies at Noida, India.</p>
+					</li>
+					<li>
+						<a href="https://jssaten.ac.in/">
+							<img src="res/jss-logo.jpeg">
+						</a>
+						<a class="float-left" style="color:#228B22">B.Tech. Mechanical Engineering</a>
+						<a class="float-right" style="color:#228B22">June 2017</a>
+						<br>
+						<p style="text-align:justify;">Received bachelor degree in mechanical engineering from JSS Academy of technical Education, Noida, India. Specialized in general mechanical engineering</p>
+					</li>
+					<!-- li>
+						<a href="https://www.schillerschule-hannover.de/">
+							<img src="res/Logo-Schillerschule.png">
+						</a>
+						 <img src="res/ib-logo.jpg" style="position: absolute; left: -150px; top: 50px; width: auto; height: 140px;"> 
+						<a class="float-left" style="color:#228B22">High School Diploma</a>
+						<a class="float-right" style="color:#228B22">June 2017</a>
+						<br>
+						<p style="text-align:justify;">Graduated from Schillerschule Hannover with the German high school diploma, Abitur, and the international high school diploma, IB diploma.</p>
+					</li>
+					<li>
+						<a href="https://www.aghseagles.org/">
+							<img src="res/aghs_logo.png">
+						</a>
+						<a class="float-left" style="color:#228B22">School Exchange in USA</a>
+						<a class="float-right" style="color:#228B22">2014/2015</a>
+						<br>
+						<p style="text-align:justify;">Participated in a 10 month long high school exchange in California.</p>
+					</li>
+					<li>
+						<a class="float-left" style="color:#228B22">Birth</a>
+						<a class="float-right" style="color:#228B22">20 September, 1998</a>
+					</li -->
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+		<hr style="width:80%;">
+
+		<footer class="container-fluid bg-1 text-center footer">
+  			<span>
+			<a href="mailto:rajrohit403@gmail.com"><svg height="32" class="octicon octicon-mail" viewBox="0 0 14 16" version="1.1" width="28" aria-hidden="true"><path fill-rule="evenodd" d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"></path></svg></a>&nbsp;&nbsp;
+			<a href="https://github.com/rraj-io"> <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+			<a itemprop="sameAs" content="https://www.linkedin.com/in/rajrohit403//" href="https://www.linkedin.com/in/rajrohit403/" style="vertical-align:top;"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z" fill="currentColor"></path></svg></a>
+			<a href="https://scholar.google.com/citations?user=jeEb-HoAAAAJ&hl=en"> <img width="32" alt="Google Scholar logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/32px-Google_Scholar_logo.svg.png" style="vertical-align:top;"></a>
+			<!-- a href="https://julianroth.org/misc/kerygmat" style="vertical-align:top;"><img width="32" height="32" alt="arXiv logo" src="res/bible.svg" style="vertical-align:top;"></a -->
+			<!-- a href="https://julianroth.org/blog" style="vertical-align:top;"><img width="32" height="32" alt="arXiv logo" src="res/blog.svg" style="vertical-align:top;"></a -->
+			<!-- a href="http://arxiv.org/a/roth_j_1"> <img width="32" height="32" alt="arXiv logo" src="res/arxiv-logomark-small.svg" style="vertical-align:top;"></a -->
+			<a itemprop="sameAs" content="https://orcid.org/0009-0003-1826-6122" href="https://orcid.org/0009-0003-1826-6122" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:2em;margin-right:.5em;" alt="ORCID iD icon"></a>
+			<!-- a href="https://musescore.com/user/9090221?share=copy_link" style="vertical-align:top;"><img src="https://musescore.com/static/musescore/userdata/group/avatar/a/9/e/4982448.jpg@2000x500?cache=1719405004&bgclr=ffffff" alt="MuseScore logo" width="32" height="32"></a --></div>
+&nbsp;&nbsp;
+		</p>
+		</footer>
+	</body>
+</html>
